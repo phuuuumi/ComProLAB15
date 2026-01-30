@@ -18,4 +18,29 @@ int main(){
 	return 0;
 }
 
+void shuffle(int &a,int &b,int &c,int &d){
+	int first = rand()%4;
+	int sec = rand()%4;
+	if(first == 0){
+		if(sec == 1) swap(a, b);
+		else if(sec == 2) swap(a, c);
+		else if(sec == 3) swap(a, d);
+	}
+	else if(first == 1){
+		if(sec == 0) swap(a, b);
+		else if(sec == 2) swap(b, c);
+		else if(sec == 3) swap(b, d);
+	}
+	else if(first == 2){
+		if(sec == 0) swap(a, c);
+		else if(sec == 1) swap(b, c);
+		else if(sec == 3) swap(c, d);
+	}
+	else {
+		if(sec == 0) swap(d, a);
+		else if(sec == 1) swap(d, b);
+		else if(sec == 2) swap(d, c);
+	}
+}
+
 //Do not modify source code above this line
